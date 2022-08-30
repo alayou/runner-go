@@ -13,7 +13,7 @@ steps:
 - name: test
   image: harbor.alayou.xyz/docker-proxy/library/golang:1.12
   environment:
-    GOPROXY: "http://goproxy.cn,direct"
+    GOPROXY: "http://goproxy.cn"
   commands:
   - go test ./...
 

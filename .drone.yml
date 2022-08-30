@@ -2,8 +2,15 @@ kind: pipeline
 name: default
 
 steps:
+- name: clone
+  image: drone/git
+  extra_hosts:
+    - "gitlab.matosiki.cn:192.168.51.240"
+
 - name: test
   image: golang:1.12
+  extra_hosts:
+    - "gitlab.matosiki.cn:192.168.51.240"
   commands:
   - go test ./...
 
